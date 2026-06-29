@@ -1,0 +1,24 @@
+body {
+   font-family: 'Inter', sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #14035f,
+    #c3cfe2
+  );
+}
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.card-stock {
+  border-radius: 20px;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.18),
+    0 5px 15px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease;
+}
+
+.card-stock:hover {
+  transform: translateY(-3px);
+}
