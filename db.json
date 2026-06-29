@@ -53,7 +53,7 @@
       "categoria": "Cuidado Personal",
       "producto": "Hisopos",
       "precioUnitario": "1600",
-      "cantidad": "20",
+      "cantidad": "2",
       "id": "sw_cdifF1zM"
     },
     {
@@ -85,7 +85,7 @@
       "categoria": "Bebidas",
       "producto": "Cepita del Valle 1.5 lt",
       "precioUnitario": "3300",
-      "cantidad": "16",
+      "cantidad": "0",
       "id": "9JbjcVp-MkE"
     },
     {
@@ -117,7 +117,7 @@
       "categoria": "Cuidado Personal",
       "producto": "Crema Facial",
       "precioUnitario": "3500",
-      "cantidad": "2",
+      "cantidad": "4",
       "id": "jFj8xkm0IdE"
     }
   ],

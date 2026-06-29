@@ -20,31 +20,34 @@ const CrudForm = ({createData, updateData, dataToEdit, setDataToEdit }) => {
         }
         },[dataToEdit]
     )
-
-    const handleChange = (e) => {
+//e evento
+    const handleChange = (e) => { //cuando usuario escribe en el input, se ejecuta esta funcion, que actualiza el estado form con los valores del input
         setForm({
-            ...form,
-            [e.target.name]: e.target.value,
+            ...form,//copiar todo lo anterior
+            [e.target.name]: e.target.value,  //campo dinamico q actualiza solo lo que se cambio
         })
         
     }
-    const handleSubmit = (e) => {
-        e.preventDefault();
+
+    const handleSubmit = (e) => {//agregar o actualizar
+        e.preventDefault();//evita que se recargue la pagina
         if(!form.fecha || !form.categoria || !form.producto || !form.precioUnitario || !form.cantidad){
-            alert('Datos incompletos. Por favor complete todos los campos');
-            return;
+            alert('Datos incompletos. Por favor complete todos los campos');//verifica
+            return;//detiene, no envia nada al serv
         }
-        if(form.id === null){
+        if(form.id === null){//tiene?
             createData(form);
         } else {
             updateData(form);
         }
-        handleReset();
+        handleReset();//limpia el form
     }
+
     const handleReset = (e) => {
         setForm(initialForm);
 	    setDataToEdit(null);
     }
+
 	return(
 
         <div  className="card card-stock cold-md-8 shadow-lg border-0 container mt-5 mb-5">
@@ -83,7 +86,7 @@ const CrudForm = ({createData, updateData, dataToEdit, setDataToEdit }) => {
                             </select>
                         </div>
                     </div>
-
+                                                                            
                     <input type="text" name="producto" placeholder="Producto" onChange={handleChange} value={form.producto} className="form-control form-control-lg mb-3"/>
                     <input type="text" name="cantidad" placeholder="Cantidad" onChange={handleChange} value={form.cantidad} className="form-control form-control-lg mb-3"/>    
                     <input type="text" name="precioUnitario" placeholder="Precio Unitario" onChange={handleChange} value={form.precioUnitario} className="form-control form-control-lg"/> 

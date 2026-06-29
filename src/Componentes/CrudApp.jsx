@@ -16,6 +16,8 @@ const CrudApp = () => {
     .catch((err) => console.error("Error:", err));
 }, []);
 
+
+//estado
     const [dataToEdit, setDataToEdit] = useState(null); {/*este estado almacena el producto que se quiere editar, cuando se hace clic en el botón de editar , ese estado cambia y el form se completa automaticamente*/}
 
 
@@ -104,11 +106,17 @@ const CrudApp = () => {
 {/*le paso las funciones de crear, actualizar y eliminar datos, así como el estado de dataToEdit y la función 
 setDataToEdit para poder editar un registro desde el formulario 
             
+            createData={createData}
+            prop------> funcion
+
+            a veces 
+            prop----> data,el estado ej datatoedit
+
 -comunicacion padre-hijo: le paso las funciones de crear, actualizar y eliminar datos, 
  así como el estado de dataToEdit y la función setDataToEdit para poder editar un registro desde el formulario */}
             */
             <CrudForm createData={createData} updateData={updateData} dataToEdit={dataToEdit} setDataToEdit={setDataToEdit} />
-
+                      
             
 			<CrudTable 
             data={db} setDataToEdit={setDataToEdit} deleteData={deleteData} 
