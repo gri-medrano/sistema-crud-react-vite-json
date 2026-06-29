@@ -21,13 +21,13 @@ const CrudTable = ({data, setDataToEdit, deleteData, filtroCategoria, setFiltroC
             className="form-control mb-3"
             placeholder="Buscar producto..."
             value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
+            onChange={(e) => setBusqueda(e.target.value)} //función que se ejecuta cuando cambia el valor del input
             />
             <h4>o mejor por categoria:</h4>
             <select
             className="form-select mb-3"
             value={filtroCategoria}
-            onChange={(e) => setFiltroCategoria(e.target.value)}
+            onChange={(e) => setFiltroCategoria(e.target.value)} //función que se ejecuta cuando cambia el valor del select
             >
                                 <option value="">Todas</option>
                                 <option value="Alimentos">Alimentos</option>
@@ -66,23 +66,25 @@ const CrudTable = ({data, setDataToEdit, deleteData, filtroCategoria, setFiltroC
                             <td colSpan="7">Sin Datos</td>
                         </tr>
                         ) : (
-                        data
-                            .filter(el =>
-                            filtroCategoria === ""
+                        data   //estado q viene de crudapp
+                            .filter(el =>  //recorre todo el arreglo 
+                            filtroCategoria === ""       //condicion, si el filtro de categoria esta vacio muestro todos los productos
                                 ? true
-                                : el.categoria === filtroCategoria
+                                : el.categoria === filtroCategoria    //sino muestro los productos que coincidan con la categoria seleccionada
                             )
-                            .filter(el =>
+                            .filter(el =>    //sobre el resultado del filtro anterior
                                 el.producto
-                                .toLowerCase()
-                                .includes(busqueda.toLowerCase())
+                                .toLowerCase() //convierte en minusculas 
+                                .includes(busqueda.toLowerCase())  //busqueda por producto, si el producto contiene la cadena de busqueda lo muestro
                             )
-                            .map(el => (
+                            .map(el => (   //cada producto que queda muestro una fila
+
+                                //renderizo
                             <CrudTableRow
-                                key={el.id}
+                                key={el.id}    //paso el id como key para que react pueda identificar cada fila de la tabla
                                 el={el}
                                 setDataToEdit={setDataToEdit}
-                                deleteData={deleteData}
+                                deleteData={deleteData}   
                             />
                             ))
                         )}

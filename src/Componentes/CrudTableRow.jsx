@@ -7,7 +7,7 @@ const CrudTableRow = ({el, setDataToEdit, deleteData}) => {
             <td>{categoria}</td>
             <td>{producto}</td>
             <td>${precioUnitario}</td>
-            <td>{el.cantidad} {el.cantidad == 0 ? (
+            <td>{el.cantidad} {el.cantidad == 0 ? (   //si la cantidad es 0 muestro un badge de sin stock, si es menor a 10 muestro un badge de bajo stock, sino muestro un badge de disponible     
                 <span className="badge bg-dark">
                 Sin Stock
                 </span>

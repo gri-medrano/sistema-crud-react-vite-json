@@ -3,8 +3,9 @@ import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
 const CrudApp = () => {
-    const [db, setDb] = useState([]);
+    const [db, setDb] = useState([]); //USESTATE PARA ADMINISTRAR EL ESTADO 
     
+    //HOOK PARA EJECUTAR EFECTOS SECUNDARIOS, EN ESTE CASO PARA OBTENER LOS DATOS DE LA API CUANDO SE MONTA EL COMPONENTE
     useEffect(() => {
   fetch("http://localhost:3002/productos")
     .then((res) => res.json())
@@ -26,47 +27,49 @@ const CrudApp = () => {
             {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json", //TIPO DE CONTENIDO QUE SE ENVIA AL SERVIDOR, EN ESTE CASO JSON
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(data), //CONVIERTO EL OBJETO DATA EN UN STRING JSON PARA ENVIARLO AL SERVIDOR
             }
         );
 
         const nuevoProducto = await respuesta.json();
 
-        setDb([...db, nuevoProducto]);
+        setDb([...db, nuevoProducto]); //agrego el nuevo producto al estado db, para que se renderice en la tabla
 
          } catch (error) {
              console.error("Error al crear producto:", error);
              }
     };
 
-
-    const updateData = async (data) => {
+    //le digo a js que realizare tareas asincronicas
+    const updateData = async (data) => { //recibo data del form,osea el producto editado
+        //try para controlar errores, si hay un error se ejecuta el catch
         try {
-            const respuesta = await fetch(
-                `http://localhost:3002/productos/${data.id}`,
-                {
+            const respuesta = await fetch(    //peticion al servidor
+                `http://localhost:3002/productos/${data.id}`,  //se indica a que recurso acceder
+                {//objeto
                     method: "PUT",
                     headers: {
-                        "Content-Type": "application/json",
+                        "Content-Type": "application/json", //TIPO DE CONTENIDO QUE SE ENVIA AL SERVIDOR, EN ESTE CASO JSON
                     },
-                    body: JSON.stringify(data),
+                    body: JSON.stringify(data),// envio los datos 
                 }
             );
 
-            const productoActualizado = await respuesta.json();
+            const productoActualizado = await respuesta.json(); //convierto la respuesta en un objeto js
 
-            let newData = db.map((el) =>
-            String(el.id) === String(data.id)
-                 ? productoActualizado
-                 : el
+            let newData = db.map((el) => //recorro todo el estado, la db , mapeo 
+            //string porq es alfanumerico 
+            String(el.id) === String(data.id)  //comparo el id del producto editado con el id de cada producto en la db, si son iguales reemplazo el producto por el producto editado, si no son iguales dejo el producto tal cual
+                 ? productoActualizado         //operador ternario si cocincide reemplazo
+                 : el                          // si no queda como estaba
                 );
                 
-            setDb(newData);
+            setDb(newData);       //se actualiza el estado  y renderiza la tabla con los datos actualizados
 
         } catch (error) {
-            console.error("Error al actualizar producto:", error);
+            console.error("Error al actualizar producto:", error);  //manejo de errores
         }
     };
     
@@ -77,8 +80,8 @@ const CrudApp = () => {
                 method: "DELETE",
             });
 
-            let newData = db.filter(el => el.id !== id);
-            setDb(newData);
+            let newData = db.filter(el => el.id !== id);  //filtro para eliminar con el id que llego por parametro
+            setDb(newData);                                 //actualizo db
         } catch (error) {
             console.error("Error al eliminar producto:", error);
         }

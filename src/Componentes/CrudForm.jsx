@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+
 const initialForm = {
     fecha: "",
     categoria: "",
@@ -10,6 +11,7 @@ const initialForm = {
 const CrudForm = ({createData, updateData, dataToEdit, setDataToEdit }) => {
 	const [form, setForm] = useState(initialForm)
 
+    //HOOK
     useEffect(()=>{
 		if(dataToEdit){
             setForm(dataToEdit);

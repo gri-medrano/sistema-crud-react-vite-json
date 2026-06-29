@@ -29,8 +29,24 @@
       "categoria": "Limpieza",
       "producto": "lavandina x 5 lt",
       "precioUnitario": "100000",
-      "cantidad": "2",
+      "cantidad": "2000",
       "id": "jx6Fwq2sGiQ"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Comestibles",
+      "producto": "caramelos",
+      "precioUnitario": "10",
+      "cantidad": "100",
+      "id": "mfJxYH9U-7k"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Descartables",
+      "producto": "jkwdfjlefj",
+      "precioUnitario": "55",
+      "cantidad": "10",
+      "id": "q6b0Ts-AOBU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
