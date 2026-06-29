@@ -34,19 +34,91 @@
     },
     {
       "fecha": "2026-06-29",
-      "categoria": "Comestibles",
-      "producto": "caramelos",
-      "precioUnitario": "10",
-      "cantidad": "100",
-      "id": "mfJxYH9U-7k"
+      "categoria": "Alimentos",
+      "producto": "Harina Pureza x 1kg",
+      "precioUnitario": "1588",
+      "cantidad": "20",
+      "id": "jl_qWr0GALg"
     },
     {
       "fecha": "2026-06-29",
-      "categoria": "Descartables",
-      "producto": "jkwdfjlefj",
-      "precioUnitario": "55",
-      "cantidad": "10",
-      "id": "q6b0Ts-AOBU"
+      "categoria": "Libreria",
+      "producto": "Kit universitario",
+      "precioUnitario": "36685",
+      "cantidad": "5",
+      "id": "CC3e2Bm5QLQ"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Cuidado Personal",
+      "producto": "Hisopos",
+      "precioUnitario": "1600",
+      "cantidad": "20",
+      "id": "sw_cdifF1zM"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Lacteos",
+      "producto": "Leche La Serenisima ",
+      "precioUnitario": "1925",
+      "cantidad": "40",
+      "id": "UB_LH-rcfQk"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Bebidas",
+      "producto": "Pepsi x 3LT",
+      "precioUnitario": "4500",
+      "cantidad": "32",
+      "id": "cu0CL7wJuwA"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Varios",
+      "producto": "Crema Nivea x 400ml",
+      "precioUnitario": "9000",
+      "cantidad": "1",
+      "id": "kfx0TyrJLbY"
+    },
+    {
+      "fecha": "2026-06-29",
+      "categoria": "Bebidas",
+      "producto": "Cepita del Valle 1.5 lt",
+      "precioUnitario": "3300",
+      "cantidad": "16",
+      "id": "9JbjcVp-MkE"
+    },
+    {
+      "fecha": "2026-06-14",
+      "categoria": "Alimentos",
+      "producto": "Azucar Ledesma Comun",
+      "precioUnitario": "1490",
+      "cantidad": "80",
+      "id": "ylGtZ47nb0M"
+    },
+    {
+      "fecha": "2026-06-24",
+      "categoria": "Cuidado Personal",
+      "producto": "Agua micelar GARNIER 400ml",
+      "precioUnitario": "9000",
+      "cantidad": "30",
+      "id": "FNKvQEM8lLI"
+    },
+    {
+      "fecha": "2026-06-24",
+      "categoria": "Cuidado Personal",
+      "producto": "Algodon ESTRELLA",
+      "precioUnitario": "1500",
+      "cantidad": "20",
+      "id": "OPyGOH2QE14"
+    },
+    {
+      "fecha": "2026-06-24",
+      "categoria": "Cuidado Personal",
+      "producto": "Crema Facial",
+      "precioUnitario": "3500",
+      "cantidad": "2",
+      "id": "jFj8xkm0IdE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

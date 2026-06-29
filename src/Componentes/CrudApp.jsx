@@ -100,7 +100,7 @@ const CrudApp = () => {
             <h2 className="display-4 fw-bold text-center mb-4">
            Centro de distribución Ultra 
             </h2>
-
+ 
 {/*le paso las funciones de crear, actualizar y eliminar datos, así como el estado de dataToEdit y la función 
 setDataToEdit para poder editar un registro desde el formulario 
             
